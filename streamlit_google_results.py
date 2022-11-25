@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import time
-import requests
+from requests_html import HTMLSession
 from bs4 import BeautifulSoup
 
 
@@ -29,7 +29,7 @@ with model_running:
     if submitted:
 
         
-        s = requests.Session()
+        s= HTMLSession()
 
         def getdata(url):
             r =s.get(url)
